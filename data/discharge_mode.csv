@@ -1,0 +1,9 @@
+death,Помер(ла)
+discharge_worse,Виписаний(а) з погіршенням
+left_by_patient,Пацієнт(ка) залишив(ла) заклад охорони здоров'я всупереч медичним рекомендаціям
+discharge_better,Виписаний(а) з поліпшенням
+transfer_general,Переведено в інший ЗОЗ
+discharge_healthy,Здоровий(а)
+discharge_recovery,Виписаний(а) з одужанням
+discharge_no_change,Без змін
+statistic_discharge,Статистична виписка
