@@ -7,8 +7,8 @@ WITH pr AS
     AND adrg LIKE 'C16%')
 
 SELECT pr.id,
-       string_agg(array_agg(note),', ') AS procedures
+       array_to_string(array_agg(note),', ') AS procedures
   FROM pr
-       LEFT JOIN core.dim_med_procedures AS p ON proc_id.id = p.id
+       LEFT JOIN core.dim_med_procedures AS p ON pr.id = p.id
  WHERE p.is_current = 'Y'      
  GROUP BY pr.id 
