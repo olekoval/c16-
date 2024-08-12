@@ -9,12 +9,7 @@ dict_service AS
 	FROM analytics.ref_pmg_coefficients_services
    where is_current = 'Y' and year = '2024'
      and packet_number IN ('3','47','57')
-group by 1,2,3),
--- note AS
--- (select id, string_agg(note,', ') AS nt
---    from core.dim_med_procedures 
---   where is_current = 'Y'
---   group by 1)
+group by 1,2,3)
 
 SELECT e.edrpou,
        registration_area,
@@ -33,7 +28,6 @@ SELECT e.edrpou,
 	   LEFT JOIN dict_pdiagnosis AS dp ON e.principal_diagnosis = dp.code
 	   LEFT JOIN dict_service AS ds USING(service_number)
 	   LEFT JOIN analytics.dwh_legal_entities_edrpou_view AS ev ON ev.edrpou = e.edrpou
-	   LEFT JOIN note AS n ON n.
  WHERE is_correct
    AND adrg LIKE 'C16%'	   
 	   
